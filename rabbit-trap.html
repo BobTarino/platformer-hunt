@@ -23,12 +23,15 @@
                 part = "01";
         }
 
-        // loops through and adds a script tag for every js file
-        for (let i = 0; i <script sources.length; i ++) {
+        // loops through and adds a script tag for every js file in application
+        for (let i = 0; i <  sources.length; i ++) {
 
             let script = document.createElement("script");
+            // adds new script for each one
             script.setAttribute("type", "text/javascript");
-            script.setAttribute("src", String())
+            // parse (edit) together the url (or source attribute ) to match whatever part I'm in
+            script.setAttribute("src", String(part + "/" + sources[i] + part + ".js"));
+            document.head.appendChild(script);
 
         }
     </script>
